@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batizado da Agatha Romeiro</title>
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* PALETA SUAVE: OFF-WHITE + DOURADO + ROSA */
+            --fundo-pagina: #FDFBF7;        
+            --fundo-card: #FFFFFF;          
+            --borda-card: #F0E6D8;          
+            --texto-principal: #6B5B4F;     
+            --texto-secundario: #A8988C;    
+            --dourado: #C5A059;             
+            --dourado-claro: #D4B87A;       
+            --rosa-principal: #E8A0B4;      
+            --rosa-texto: #D48A96;          
+            --fonte-titulo: 'Cinzel', serif;
+            --fonte-nome: 'Great Vibes', cursive;
+            --fonte-texto: 'Montserrat', sans-serif;
+            --fonte-destaque: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-texto);
+            background-color: var(--fundo-pagina);
+            color: var(--texto-principal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Detalhes de fundo (folhas) bem suaves */
+        .folha-decorativa {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0.08;
+            color: var(--dourado);
+            pointer-events: none;
+        }
+        .folha-topo-esq { top: 20px; left: 20px; transform: rotate(-30deg); }
+        .folha-topo-dir { top: 20px; right: 20px; transform: rotate(30deg) scaleX(-1); }
+        .folha-base-esq { bottom: 20px; left: 20px; transform: rotate(30deg); }
+        .folha-base-dir { bottom: 20px; right: 20px; transform: rotate(-30deg) scaleX(-1); }
+
+        .card {
+            background-color: var(--fundo-card);
+            border-radius: 16px;
+            padding: 35px 30px;
+            text-align: center;
+            border: 1px solid var(--borda-card);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .cabecalho h1 {
+            font-family: var(--fonte-titulo);
+            color: var(--dourado);
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* --- FOTO --- */
+        .foto-container {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            padding: 8px;
+            border: 1px dashed var(--rosa-principal);
+            position: relative;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .foto-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 6px 18px rgba(232, 160, 180, 0.2);
+        }
+
+        h2.nome {
+            font-family: var(--fonte-nome);
+            font-size: 4rem;
+            color: var(--dourado);
+            margin-bottom: 15px;
+            line-height: 1;
+            font-weight: 400;
+        }
+
+        .subtitulo {
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+            margin-bottom: 5px;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.5;
+            padding: 0 20px;
+        }
+
+        .passaros {
+            margin: 25px 0;
+            color: var(--dourado-claro);
+            font-size: 1.1rem;
+            opacity: 0.8;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contagem-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contagem-item {
+            background-color: #fff;
+            border: 1px solid var(--borda-card);
+            border-radius: 12px;
+            padding: 15px 18px;
+            min-width: 80px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .contagem-item span {
+            display: block;
+            font-family: var(--fonte-titulo);
+            font-size: 1.6rem;
+            color: var(--dourado);
+            font-weight: 600;
+        }
+
+        .contagem-item small {
+            font-size: 0.7rem;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+            color: var(--texto-secundario);
+            font-style: italic;
+        }
+
+        .titulo-secao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: var(--fonte-destaque);
+            color: var(--dourado-claro);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .titulo-secao i {
+            color: var(--dourado-claro);
+            font-size: 1.1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .info-label {
+            font-size: 0.7rem;
+            color: var(--texto-secundario);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .info-label i {
+            color: var(--rosa-principal);
+            font-size: 0.9rem;
+        }
+
+        .info-valor {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--texto-principal);
+            line-height: 1.4;
+        }
+
+        .links-acao {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+            border-top: 1px dashed var(--borda-card);
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+
+        .link-mapa, .link-agenda {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .link-mapa:hover, .link-agenda:hover {
+            color: var(--rosa-texto);
+        }
+
+        .link-mapa i, .link-agenda i {
+            color: var(--rosa-principal);
+            font-size: 1rem;
+        }
+
+        .texto-almoco {
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+            line-height: 1.7;
+            text-align: left;
+            font-weight: 400;
+        }
+
+        .texto-almoco p {
+            margin-bottom: 15px;
+        }
+
+        .texto-almoco strong {
+            color: var(--texto-principal);
+            font-weight: 600;
+        }
+
+        .coracao-final {
+            color: var(--rosa-principal);
+            font-size: 1.2rem;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        /* --- SEÇÃO DE CONFIRMAÇÃO PELO GOOGLE FORMS --- */
+        .secao-formulario {
+            background-color: var(--fundo-card);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid var(--borda-card);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            margin-top: 10px;
+        }
+
+        .secao-formulario h2 {
+            font-family: var(--fonte-destaque);
+            font-size: 2rem;
+            color: var(--dourado-claro);
+            margin-bottom: 15px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .secao-formulario p {
+            font-size: 1rem;
+            color: var(--texto-secundario);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .btn-formulario {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--rosa-principal);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-family: var(--fonte-texto);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 160, 180, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-formulario:hover {
+            background-color: var(--rosa-texto);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(232, 160, 180, 0.5);
+        }
+
+        .btn-formulario i {
+            font-size: 1.2rem;
+        }
+
+        .rodape {
+            text-align: center;
+            padding: 20px 0 40px;
+        }
+
+        .rodape p {
+            font-size: 0.9rem;
+            color: var(--texto-secundario);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .rodape .assinatura {
+            font-family: var(--fonte-nome);
+            font-size: 2.8rem;
+            color: var(--dourado);
+            font-weight: 400;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 480px) {
+            .card { padding: 25px 20px; }
+            h2.nome { font-size: 3rem; }
+            
+            /* ✅ FOTO GRANDE TAMBÉM NO CELULAR */
+            .foto-container { 
+                width: 250px;   /* Aumentei de 220px para 250px */
+                height: 250px;  /* Aumentei de 220px para 250px */
+                margin-bottom: 25px;
+                padding: 6px;
+            }
+            
+            .contagem-item { min-width: 65px; padding: 12px 10px; }
+            .contagem-item span { font-size: 1.4rem; }
+            .info-grid { grid-template-columns: 1fr; gap: 20px; }
+            .folha-decorativa { width: 50px; height: 50px; }
+            .secao-formulario h2 { font-size: 1.6rem; }
+            .secao-formulario p { padding: 0 10px; font-size: 0.9rem; }
+            .btn-formulario { width: 100%; padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ícones decorativos de folhas no fundo -->
+    <i class="fa-solid fa-leaf folha-decorativa folha-topo-esq"></i>
+    <i class="fa-solid fa-leaf folha-decorativa folha-topo-dir"></i>
+    <i class="fa-solid fa-leaf folha-decorativa folha-base-esq"></i>
+    <i class="fa-solid fa-leaf folha-decorativa folha-base-dir"></i>
+
+    <div class="container">
+        
+        <!-- CARTÃO 1: CABEÇALHO E CONTAGEM -->
+        <div class="card cabecalho">
+            <h1>Convite de Batizado</h1>
+
+            <div class="foto-container">
+                <!-- COLOQUE SUA FOTO NA PASTA img COM O NOME agatha.jpg -->
+                <img src="img/agatha.jpg" alt="Foto da Agatha Romeiro" onerror="this.src='https://via.placeholder.com/280x280/E8A0B4/FFFFFF?text=Foto+da+Agatha'">
+            </div>
+
+            <h2 class="nome">Agatha Romeiro</h2>
+            <p class="subtitulo">Mamãe e papai convidam você para celebrar comigo este dia tão especial.</p>
+
+            <div class="passaros">
+                <i class="fa-solid fa-dove"></i>
+                <i class="fa-solid fa-dove" style="transform: scaleX(-1);"></i>
+            </div>
+
+            <!-- Contagem Regressiva -->
+            <div class="contagem-container" id="contagem">
+                <div class="contagem-item"><span id="dias">00</span><small>dias</small></div>
+                <div class="contagem-item"><span id="horas">00</span><small>horas</small></div>
+                <div class="contagem-item"><span id="minutos">00</span><small>min</small></div>
+                <div class="contagem-item"><span id="segundos">00</span><small>seg</small></div>
+            </div>
+        </div>
+
+        <!-- CARTÃO 2: QUANDO E ONDE -->
+        <div class="card">
+            <div class="titulo-secao">
+                <i class="fa-regular fa-calendar"></i>
+                Quando & onde
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label"><i class="fa-regular fa-calendar"></i> Data</span>
+                    <span class="info-valor">4 de outubro de 2026</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label"><i class="fa-regular fa-clock"></i> Horário</span>
+                    <span class="info-valor">A partir das 10h</span>
+                </div>
+                <div class="info-item" style="grid-column: 1 / -1;">
+                    <span class="info-label"><i class="fa-solid fa-location-dot"></i> Local</span>
+                    <span class="info-valor">Paróquia Nossa Senhora da Natividade<br>Rua 30, Nova Araguaína — Araguaína, TO</span>
+                </div>
+            </div>
+
+            <div class="links-acao">
+                <a href="https://maps.google.com/?q=Paróquia+Nossa+Senhora+da+Natividade+Araguaína" target="_blank" class="link-mapa">
+                    <i class="fa-solid fa-map"></i> Ver no mapa
+                </a>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Batizado+da+Agatha+Romeiro&dates=20261004T130000Z/20261004T160000Z&details=Venha+celebrar+o+batizado+da+Agatha!&location=Prq.+Nossa+Senhora+da+Natividade,+Rua+30,+Nova+Araguaína+-+Araguaína" target="_blank" class="link-agenda">
+                    <i class="fa-regular fa-calendar-plus"></i> Adicionar ao Google Agenda
+                </a>
+            </div>
+        </div>
+
+        <!-- CARTÃO 3: DEPOIS DA CERIMÔNIA -->
+        <div class="card">
+            <div class="titulo-secao">
+                <i class="fa-solid fa-utensils"></i>
+                Depois da cerimônia
+            </div>
+
+            <div class="texto-almoco">
+                <p>Teremos a alegria de recebê-los em nossa casa para um almoço especial, com direito a churrasco.</p>
+                <p>Pedimos, com carinho, que cada pessoa traga 400 g de carne e a bebida de sua preferência.</p>
+                <p>Sua presença é o presente mais especial para nós. <span class="coracao-final">❤️</span></p>
+            </div>
+        </div>
+
+        <!-- CARTÃO 4: CONFIRMAÇÃO PELO GOOGLE FORMS -->
+        <div class="secao-formulario">
+            <h2>Sua presença é especial</h2>
+            <p>Para confirmar sua presença, clique no botão abaixo. Leva menos de 1 minuto!</p>
+            
+            <!-- ⚠️ SUBSTITUA O LINK ABAIXO PELO LINK DO SEU GOOGLE FORMS -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSftR848Y3rDIOfqhta6js8tiWgtyJeaZr-vrSwTJX_tPMUV0w/viewform?usp=dialog" target="_blank" class="btn-formulario">
+                <i class="fa-solid fa-clipboard-check"></i> Confirmar Presença
+            </a>
+        </div>
+
+        <!-- RODAPÉ -->
+        <div class="rodape">
+            <p>Com todo o amor,</p>
+            <div class="assinatura">Mamãe & Papai</div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- CONTAGEM REGRESSIVA ---
+        const dataBatizado = new Date("October 4, 2026 10:00:00").getTime();
+
+        const atualizarContagem = setInterval(function() {
+            const agora = new Date().getTime();
+            const distancia = dataBatizado - agora;
+
+            if (distancia < 0) {
+                clearInterval(atualizarContagem);
+                document.getElementById("contagem").innerHTML = "<p style='color: var(--dourado); font-weight: bold; grid-column: 1/-1;'>O grande dia chegou! 🎉</p>";
+                return;
+            }
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerText = dias.toString().padStart(2, '0');
+            document.getElementById("horas").innerText = horas.toString().padStart(2, '0');
+            document.getElementById("minutos").innerText = minutos.toString().padStart(2, '0');
+            document.getElementById("segundos").innerText = segundos.toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
