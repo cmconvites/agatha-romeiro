@@ -280,63 +280,6 @@
             display: inline-block;
         }
 
-        /* --- SEÇÃO DE CONFIRMAÇÃO PELO GOOGLE FORMS --- */
-        .secao-formulario {
-            background-color: var(--fundo-card);
-            border-radius: 16px;
-            padding: 40px 30px;
-            text-align: center;
-            border: 1px solid var(--borda-card);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-            margin-top: 10px;
-        }
-
-        .secao-formulario h2 {
-            font-family: var(--fonte-destaque);
-            font-size: 2rem;
-            color: var(--dourado-claro);
-            margin-bottom: 15px;
-            font-style: italic;
-            font-weight: 600;
-        }
-
-        .secao-formulario p {
-            font-size: 1rem;
-            color: var(--texto-secundario);
-            margin-bottom: 25px;
-            line-height: 1.6;
-            padding: 0 20px;
-        }
-
-        .btn-formulario {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: var(--rosa-principal);
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-family: var(--fonte-texto);
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(232, 160, 180, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-formulario:hover {
-            background-color: var(--rosa-texto);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(232, 160, 180, 0.5);
-        }
-
-        .btn-formulario i {
-            font-size: 1.2rem;
-        }
-
         .rodape {
             text-align: center;
             padding: 20px 0 40px;
@@ -371,10 +314,10 @@
             .card { padding: 25px 20px; }
             h2.nome { font-size: 3rem; }
             
-            /* ✅ FOTO GRANDE TAMBÉM NO CELULAR */
+            /* FOTO GRANDE TAMBÉM NO CELULAR */
             .foto-container { 
-                width: 250px;   /* Aumentei de 220px para 250px */
-                height: 250px;  /* Aumentei de 220px para 250px */
+                width: 250px;
+                height: 250px;
                 margin-bottom: 25px;
                 padding: 6px;
             }
@@ -383,9 +326,6 @@
             .contagem-item span { font-size: 1.4rem; }
             .info-grid { grid-template-columns: 1fr; gap: 20px; }
             .folha-decorativa { width: 50px; height: 50px; }
-            .secao-formulario h2 { font-size: 1.6rem; }
-            .secao-formulario p { padding: 0 10px; font-size: 0.9rem; }
-            .btn-formulario { width: 100%; padding: 15px 20px; }
         }
     </style>
 </head>
@@ -469,17 +409,6 @@
                 <p>Pedimos, com carinho, que cada pessoa traga 400 g de carne e a bebida de sua preferência.</p>
                 <p>Sua presença é o presente mais especial para nós. <span class="coracao-final">❤️</span></p>
             </div>
-        </div>
-
-        <!-- CARTÃO 4: CONFIRMAÇÃO PELO GOOGLE FORMS -->
-        <div class="secao-formulario">
-            <h2>Sua presença é especial</h2>
-            <p>Para confirmar sua presença, clique no botão abaixo. Leva menos de 1 minuto!</p>
-            
-            <!-- ⚠️ SUBSTITUA O LINK ABAIXO PELO LINK DO SEU GOOGLE FORMS -->
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSftR848Y3rDIOfqhta6js8tiWgtyJeaZr-vrSwTJX_tPMUV0w/viewform?usp=dialog" target="_blank" class="btn-formulario">
-                <i class="fa-solid fa-clipboard-check"></i> Confirmar Presença
-            </a>
         </div>
 
         <!-- RODAPÉ -->
